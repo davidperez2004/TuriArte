@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playas Turísticas - Necoclí</title>
+  <link rel="stylesheet" href="../Style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body class="bg-gray-50">
+
+  <header class="bg-teal-600 text-white p-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Playas Turísticas - Necoclí</h1>
+    <a href="../index.html#necocli" class="btn-card">⬅ Volver</a>
+  </header>
+
+  <main class="max-w-6xl mx-auto py-12 px-6">
+
+    <!-- Buscador -->
+    <input id="buscador" type="text" placeholder="Buscar playa, dirección o teléfono..."
+      class="w-full p-3 mb-6 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-400">
+
+    <!-- Mapa -->
+    <div id="mapa" style="height: 420px; border-radius: 16px; overflow: hidden; margin-bottom: 2rem;"></div>
+
+    <!-- Tarjetas -->
+    <section class="grid md:grid-cols-3 gap-8">
+      <div class="card">
+        <img src="../img/playa-necocli1.jpg" class="card-img">
+        <div class="card-body">
+          <h3 class="card-title">Playa El Mirador</h3>
+          <p class="card-text">Famosa por sus atardeceres y ambiente caribeño.</p>
+          <p>📍 Centro de Necoclí</p>
+          <p>📞 +57 310 111 2233</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../img/playa-necocli2.jpg" class="card-img">
+        <div class="card-body">
+          <h3 class="card-title">Playa del Caribe</h3>
+          <p class="card-text">Arena blanca y aguas tranquilas, ideal para familias.</p>
+          <p>📍 Vía Necoclí – Arboletes</p>
+          <p>📞 +57 311 222 3344</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../img/playa-necocli3.jpg" class="card-img">
+        <div class="card-body">
+          <h3 class="card-title">Playa capurgana</h3>
+          <p class="card-text">Ambiente relajante con palmeras y brisa marina.</p>
+          <p>📍 Zona costera de Necoclí</p>
+          <p>📞 +57 312 333 4455</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-teal-600 text-white text-center py-6 mt-12">
+    <p>&copy; 2025 TuriArte - Necoclí</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="../js/buscador.js"></script>
+  <script>
+    const map = L.map('mapa').setView([8.424, -76.789], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    const playas = [
+      { nombre: "Playa El Mirador", coords: [8.425, -76.789], desc: "Atardeceres y ambiente caribeño" },
+      { nombre: "Playa del Caribe", coords: [8.42, -76.78], desc: "Arena blanca y aguas tranquilas" },
+      { nombre: "Playa Los Cocos", coords: [8.43, -76.79], desc: "Ambiente relajante con palmeras" }
+    ];
+
+    playas.forEach(p => {
+      L.marker(p.coords).addTo(map).bindPopup(`<b>${p.nombre}</b><br>${p.desc}`);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gastronomía - Necoclí</title>
+  <link rel="stylesheet" href="../Style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+
+<body class="bg-gray-50">
+
+  <header class="bg-teal-600 text-white p-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Gastronomía - Necoclí</h1>
+    <a href="../index.html#necocli" class="btn-card">⬅ Volver</a>
+  </header>
+
+  <main class="max-w-6xl mx-auto py-12 px-6">
+
+    <input id="buscador" type="text" placeholder="Buscar restaurante, dirección o teléfono..."
+      class="w-full p-3 mb-6 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-400">
+
+    <div id="mapa" style="height: 420px; border-radius: 16px; overflow: hidden; margin-bottom: 2rem;"></div>
+
+    <section class="grid md:grid-cols-3 gap-8">
+      
+      <a href="../restaurantes/sabor_caribe.html" class="card block">
+        <img src="../img/comida-necocli1.jpg" class="card-img">
+        <div class="card-body">
+          <h3 class="card-title">Restaurante Sabor Caribe</h3>
+          <p class="card-text">Platos típicos con pescado fresco del día.</p>
+          <p>📍 Malecón de Necoclí</p>
+          <p>📞 +57 316 111 2233</p>
+          <span 
+            class="mt-4 inline-block bg-gradient-to-r from-pink-500 to-yellow-500 text-white px-4 py-2 rounded-lg">
+            Ver Carta
+          </span>
+        </div>
+      </a>
+
+      <a href="../restaurantes/antojitos_del_mar.html" class="card block">
+        <img src="../img/comida-necocli2.jpg" class="card-img">
+        <div class="card-body">
+          <h3 class="card-title">Antojitos del Mar</h3>
+          <p class="card-text">Especialidad en mariscos y sopas tradicionales.</p>
+          <p>📍 Calle Principal #12-34</p>
+          <p>📞 +57 317 222 3344</p>
+          <span
+            class="mt-4 inline-block bg-gradient-to-r from-pink-500 to-yellow-500 text-white px-4 py-2 rounded-lg">
+            Ver Carta
+          </span>
+        </div>
+      </a>
+
+      <a href="../restaurantes/terraza_tropical.html" class="card block">
+        <img src="../img/comida-necocli3.jpg" class="card-img">
+        <div class="card-body">
+          <h3 class="card-title">La Terraza Tropical</h3>
+          <p class="card-text">Ambiente musical y platos caribeños.</p>
+          <p>📍 Barrio Centro</p>
+          <p>📞 +57 318 333 4455</p>
+          <span
+            class="mt-4 inline-block bg-gradient-to-r from-pink-500 to-yellow-500 text-white px-4 py-2 rounded-lg">
+            Ver Carta
+          </span>
+        </div>
+      </a>
+      
+    </section>
+  </main>
+
+  <footer class="bg-teal-600 text-white text-center py-6 mt-12">
+    <p>&copy; 2025 TuriArte - Necoclí</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="../js/buscador.js"></script>
+  <script>
+    const map = L.map('mapa').setView([8.424, -76.789], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    const restaurantes = [
+      { nombre: "Sabor Caribe", coords: [8.425, -76.789], desc: "Platos típicos y pescado fresco" },
+      { nombre: "Antojitos del Mar", coords: [8.42, -76.785], desc: "Mariscos y sopas tradicionales" },
+      { nombre: "La Terraza Tropical", coords: [8.43, -76.79], desc: "Ambiente musical caribeño" }
+    ];
+
+    restaurantes.forEach(r => {
+      L.marker(r.coords).addTo(map).bindPopup(`<b>${r.nombre}</b><br>${r.desc}`);
+    });
+  </script>
+</body>
+
+</html>
