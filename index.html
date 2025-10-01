@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TuriArte</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="Style.css">
+  <meta name="description" content="TuriArte - Descubre Turbo y Necoclí: turismo, gastronomía, hospedaje y emprendimiento.">
+  <meta name="keywords" content="Turbo, Necoclí, turismo, playas, gastronomía, hospedaje, Colombia, emprendimiento">
+</head>
+<body class="font-sans bg-gray-50">
+
+  <header class="fixed w-full bg-[#CDB4DB] text-white shadow-lg z-50">
+    <div class="container mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#inicio" onclick="location.reload();" class="text-2xl font-bold">
+        TuriArte
+      </a>
+      <nav class="space-x-6">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#turbo" class="nav-link">Turbo</a>
+        <a href="#necocli" class="nav-link">Necoclí</a>
+        <a href="#emprendimiento" class="nav-link">Emprendimiento</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="inicio" class="bg-gradient-to-r from-[#BDE0FE] via-[#FFC8DD] to-[#FFAFCC] text-white h-screen flex items-center justify-center px-10">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+      <div class="max-w-lg text-center md:text-left space-y-6 fade-in">
+        <h2 class="title">TuriArte</h2>
+        <p class="desc">
+          Turiarte es una plataforma digital diseñada para mostrar y resaltar los puntos turísticos más representativos de 
+          <span class="highlight-2">Turbo y Necoclí</span>.
+          Su funcionamiento es sencillo: 
+          <span class="highlight">el visitante puede navegar por el mapa interactivo, conocer cada destino con fotos, descripciones y actividades</span>, además de obtener información práctica como ubicación y servicios cercanos.
+        </p>
+      </div>
+      <div class="logo-box fade-in delay-200">
+        <img src="img/logo3.png" alt="Logo TuriArte" class="max-w-full drop-shadow-2xl">
+      </div>
+    </div>
+  </section>
+
+  <section id="turbo" class="py-20">
+    <div class="container mx-auto text-center mb-12">
+      <h2 class="section-title">Descubre Turbo</h2>
+      <p class="section-subtitle">Naturaleza, cultura y aventura en un mismo lugar.</p>
+    </div>
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+      <div class="card">
+        <a href="turbo/turbo-playas.html">
+          <img src="img/logo_playas_turisticas_turbo.png" alt="Playas Turísticas" class="card-img">
+        </a>
+        <div class="card-body">
+          <h3 class="card-title">Playas Turísticas</h3>
+          <p class="card-text">Explora la biodiversidad única de Urabá.</p>
+          <a href="turbo/turbo-playas.html" class="btn-card">Ver más</a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="turbo/turbo-hospedaje.html">
+          <img src="img/logo_hospedaje_turbo.png" alt="Hospedaje" class="card-img">
+        </a>
+        <div class="card-body">
+          <h3 class="card-title">Hospedaje</h3>
+          <p class="card-text">Disfruta de una estadía cómoda frente al mar.</p>
+          <a href="turbo/turbo-hospedaje.html" class="btn-card">Explorar</a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="turbo/turbo-gastronomia.html">
+          <img src="img/logo_gastronomia_turbo.png" alt="Gastronomía" class="card-img">
+        </a>
+        <div class="card-body">
+          <h3 class="card-title">Gastronomía</h3>
+          <p class="card-text">Sabores locales que enamoran a todos los visitantes.</p>
+          <a href="turbo/turbo-gastronomia.html" class="btn-card">Descubrir</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="necocli" class="py-20">
+    <div class="container mx-auto text-center mb-12">
+      <h2 class="section-title">Descubre Necoclí</h2>
+      <p class="section-subtitle">Un paraíso de playas, cultura y tradición.</p>
+    </div>
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+      <div class="card">
+        <a href="necocli/necocli-playas.html">
+          <img src="img/playas_turisticas.png" alt="Playas turísticas en Necoclí" class="card-img">
+        </a>
+        <div class="card-body">
+          <h3 class="card-title">Playas turísticas</h3>
+          <p class="card-text">Aguas cristalinas y arenas doradas para relajarte.</p>
+          <a href="necocli/necocli-playas.html" class="btn-card">Ver más</a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="necocli/necocli-gastronomia.html">
+          <img src="img/logo_gastronomia.png" alt="Gastronomía en Necoclí" class="card-img">
+        </a>
+        <div class="card-body">
+          <h3 class="card-title">Gastronomía</h3>
+          <p class="card-text">Tradiciones, música y la calidez de su gente.</p>
+          <a href="necocli/necocli-gastronomia.html" class="btn-card">Explorar</a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="necocli/necocli-hospedaje.html">
+          <img src="img/logo_hospedaje.png" alt="Hospedaje en Necoclí" class="card-img">
+        </a>
+        <div class="card-body">
+          <h3 class="card-title">Hospedaje</h3>
+          <p class="card-text">Souvenirs hechos a mano por artesanos locales.</p>
+          <a href="necocli/necocli-hospedaje.html" class="btn-card">Descubrir</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="emprendimiento" class="py-20"> 
+  <div class="container mx-auto max-w-5xl text-center">
+    <h2 class="section-title">💡 Emprendimiento</h2>
+    <p class="section-subtitle mb-12">
+      Innovación, creatividad y pasión que transforman Turbo y Necoclí
+    </p>
+
+    <div class="bg-white shadow-lg rounded-2xl p-10 space-y-8">
+      <p class="desc text-lg text-gray-700 leading-relaxed">
+        El <span class="highlight">emprendimiento</span> es uno de los motores más importantes 
+        del desarrollo económico, social y cultural. Permite transformar ideas en realidades 
+        que generan valor, impulsan el turismo y fortalecen la identidad de nuestra región.
+      </p>
+
+      <h3 class="text-2xl font-bold text-[#6D28D9]">¿Para qué sirve?</h3>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="bg-[#FFC8DD] rounded-xl p-6 shadow-md">
+          <i class="fas fa-briefcase text-3xl text-[#6D28D9] mb-3"></i>
+          <h4 class="font-semibold">Genera empleo</h4>
+          <p class="text-gray-700 text-sm mt-2">Crea oportunidades y reduce el desempleo.</p>
+        </div>
+        <div class="bg-[#BDE0FE] rounded-xl p-6 shadow-md">
+          <i class="fas fa-lightbulb text-3xl text-[#EC4899] mb-3"></i>
+          <h4 class="font-semibold">Innova</h4>
+          <p class="text-gray-700 text-sm mt-2">Introduce nuevas ideas, productos y servicios.</p>
+        </div>
+        <div class="bg-[#FFAFCC] rounded-xl p-6 shadow-md">
+          <i class="fas fa-users text-3xl text-[#374151] mb-3"></i>
+          <h4 class="font-semibold">Impacto social</h4>
+          <p class="text-gray-700 text-sm mt-2">Mejora la vida de las comunidades.</p>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold text-[#6D28D9] mt-10">Características</h3>
+      <div class="grid md:grid-cols-2 gap-6 text-left">
+        <div class="flex gap-4 items-start bg-[#FFE5EC] p-4 rounded-lg">
+          <i class="fas fa-rocket text-2xl text-[#6D28D9]"></i>
+          <p><b>Innovación:</b> introducir algo nuevo o mejorar lo existente.</p>
+        </div>
+        <div class="flex gap-4 items-start bg-[#FFC8DD] p-4 rounded-lg">
+          <i class="fas fa-palette text-2xl text-[#A2D2FF]"></i>
+          <p><b>Creatividad:</b> generar ideas originales y aplicarlas en la práctica.</p>
+        </div>
+        <div class="flex gap-4 items-start bg-[#BDE0FE] p-4 rounded-lg">
+          <i class="fas fa-eye text-2xl text-[#EC4899]"></i>
+          <p><b>Visión:</b> imaginar el futuro y planificar cómo alcanzarlo.</p>
+        </div>
+        <div class="flex gap-4 items-start bg-[#FFAFCC] p-4 rounded-lg">
+          <i class="fas fa-heartbeat text-2xl text-[#374151]"></i>
+          <p><b>Resiliencia:</b> aprender de los errores y seguir adelante.</p>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <p class="desc text-lg text-center text-gray-700">
+          El emprendimiento es más que abrir un negocio: es <span class="highlight">una actitud</span> 
+          que combina creatividad, innovación y valentía para transformar ideas en realidades.  
+          Es un pilar clave para un futuro sostenible, competitivo e inclusivo.
+        </p>
+      </div>
+      
+      <div class="mt-8 pt-6 border-t border-gray-200">
+        <h3 class="text-xl font-bold text-[#6D28D9] mb-4">Métricas Clave</h3>
+        <canvas id="graficoEmprendimiento"></canvas>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TuriArte</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body class="font-sans bg-gray-50">
+
+  <!-- HEADER -->
+  <header class="fixed w-full bg-[#CDB4DB] text-white shadow-lg z-50">
+    <div class="container mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#inicio" onclick="location.reload();" class="text-2xl font-bold">TuriArte</a>
+      <nav class="space-x-6">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#turbo" class="nav-link">Turbo</a>
+        <a href="#necocli" class="nav-link">Necoclí</a>
+        <a href="#emprendimiento" class="nav-link">Emprendimiento</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SECCIONES ANTERIORES -->
+  <!-- ... aquí va todo tu contenido actual ... -->
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-20 text-gray-800">
+    <div class="container mx-auto max-w-3xl text-center">
+      <h2 class="section-title">Contáctanos</h2>
+      <p class="section-subtitle mb-6">Déjanos tu mensaje y elige cómo quieres comunicarte</p>
+
+      <!-- Formulario WhatsApp -->
+      <form class="space-y-6" onsubmit="enviarWhatsApp(event)">
+        <input type="text" class="input" id="nombre" placeholder="Tu nombre" required>
+        <input type="email" class="input" id="correo" placeholder="Tu correo" required>
+        <textarea rows="4" class="input" id="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+        
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <button type="submit" class="btn-video">💬 Enviar por WhatsApp</button>
+          <a href="mailto:empresa@turiarte.com" class="btn-video">📩 Enviar por Correo</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#A2D2FF] text-white py-6 text-center">
+    <p>&copy; 2025 TuriArte | Todos los derechos reservados</p>
+  </footer>
+
+  <!-- SCRIPT WHATSAPP -->
+  <script>
+    function enviarWhatsApp(event) {
+      event.preventDefault();
+      let nombre = document.getElementById("nombre").value;
+      let correo = document.getElementById("correo").value;
+      let mensaje = document.getElementById("mensaje").value;
+
+      let numeroEmpresa = "573001112233"; // 👈 CAMBIA este número al WhatsApp real de la empresa
+      let texto = `Hola, soy ${nombre}.\nMi correo es: ${correo}\n\n${mensaje}`;
+      let url = `https://wa.me/${numeroEmpresa}?text=${encodeURIComponent(texto)}`;
+
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
+
+
+<script>
+function enviarWhatsApp(event) {
+  event.preventDefault();
+  let nombre = document.getElementById("nombre").value;
+  let correo = document.getElementById("correo").value;
+  let mensaje = document.getElementById("mensaje").value;
+
+  let numeroEmpresa = "573044999864"; // 👈 Reemplaza con el número de WhatsApp de tu empresa (con código de país sin +)
+  let texto = `Hola, soy ${nombre}.\nMi correo es: ${correo}\n\n${mensaje}`;
+  let url = `https://wa.me/${numeroEmpresa}?text=${encodeURIComponent(texto)}`;
+
+  window.open(url, "_blank");
+}
+</script>
+
+
+
+
+
+  <footer class="bg-[#A2D2FF] text-white py-6 text-center">
+    <p>&copy; 2025 TuriArte | Todos los derechos reservados</p>
+  </footer>
+
+  <script src="../js/buscador.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/grafico.js"></script>
+  <script>
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
+  </script>
+
+</body>
+</html>
