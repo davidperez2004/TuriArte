@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospedaje - Turbo</title>
+  <link rel="stylesheet" href="../Style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body class="bg-gray-50">
+
+  <header class="bg-purple-700 text-white p-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Hospedaje - Turbo</h1>
+    <a href="../index.html#turbo" class="btn-card">⬅ Volver</a>
+  </header>
+
+  <main class="max-w-6xl mx-auto py-12 px-6">
+
+    <!-- Buscador -->
+    <input id="buscador" type="text" placeholder="Buscar hotel, dirección o teléfono..."
+      class="w-full p-3 mb-6 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400">
+
+    <!-- Mapa -->
+    <div id="mapa" style="height: 420px; border-radius: 16px; overflow: hidden; margin-bottom: 2rem;"></div>
+
+    <!-- Tarjetas -->
+    <section class="grid md:grid-cols-3 gap-8">
+      <div class="card">
+        <img src="../img/hotel_1.jpg" class="card-img">
+        <div class="card-body">
+          <h3 class="card-title">Hotel Playa Linda</h3>
+          <p class="card-text">Habitaciones cómodas frente al mar.</p>
+          <p>📍 Centro de Turbo</p>
+          <p>📞 +57 304 123 4567</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../img/hotel_2.jpg" class="card-img">
+        <div class="card-body">
+          <h3 class="card-title">Eco Hotel Manglares</h3>
+          <p class="card-text">Hospedaje ecológico rodeado de naturaleza.</p>
+          <p>📍 Vía Turbo – Necoclí</p>
+          <p>📞 +57 305 222 3344</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../img/hotel_3.jpg" class="card-img">
+        <div class="card-body">
+          <h3 class="card-title">Cabañas Urabá</h3>
+          <p class="card-text">Cabañas familiares con vista al mar.</p>
+          <p>📍 Zona costera de Turbo</p>
+          <p>📞 +57 306 333 4455</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-purple-700 text-white text-center py-6 mt-12">
+    <p>&copy; 2025 TuriArte - Turbo</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="../js/buscador.js"></script>
+  <script>
+    const map = L.map('mapa').setView([8.092, -76.728], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    const hoteles = [
+      { nombre: "Hotel Playa Linda", coords: [8.092, -76.73], desc: "Habitaciones cómodas" },
+      { nombre: "Eco Hotel Manglares", coords: [8.098, -76.725], desc: "Hospedaje ecológico" },
+      { nombre: "Cabañas Urabá", coords: [8.088, -76.735], desc: "Vista al mar" }
+    ];
+
+    hoteles.forEach(h => {
+      L.marker(h.coords).addTo(map).bindPopup(`<b>${h.nombre}</b><br>${h.desc}`);
+    });
+  </script>
+</body>
+</html>
+
+</html>
+

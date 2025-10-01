@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gastronomía - Turbo</title>
+  <link rel="stylesheet" href="../Style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header -->
+  <header class="bg-purple-700 text-white p-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Gastronomía - Turbo</h1>
+    <a href="../index.html#turbo" class="btn-card">⬅ Volver</a>
+  </header>
+
+  <main class="max-w-6xl mx-auto py-12 px-6">
+
+    <!-- Buscador -->
+    <input id="buscador" type="text" placeholder="Buscar restaurante, dirección o teléfono..."
+      class="w-full p-3 mb-6 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400">
+
+    <!-- Mapa -->
+    <div id="mapa" style="height: 420px; border-radius: 16px; overflow: hidden; margin-bottom: 2rem;"></div>
+
+    <!-- Contenedor de Restaurantes -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+      <!-- Restaurante 1 -->
+      <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition">
+        <img src="../img/restaurante1.jpg" alt="Restaurante El Pargo Rojo"
+             class="w-full h-48 object-cover cursor-pointer"
+             onclick="window.location.href='../restaurantes/pargo-rojo.html'">
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Restaurante El Pargo Rojo</h3>
+          <p class="text-gray-600 mt-2">Especialidad en pescado frito con patacones.</p>
+          <p class="mt-2">📍 Malecón de Turbo</p>
+          <p>📞 +57 307 444 5566</p>
+          <a href="../restaurantes/pargo-rojo.html"
+             class="mt-4 inline-block bg-gradient-to-r from-pink-500 to-yellow-500 text-white px-4 py-2 rounded-lg">
+             Ver Carta
+          </a>
+        </div>
+      </div>
+
+      <!-- Restaurante 2 -->
+      <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition">
+        <img src="../img/restaurante2.jpeg" alt="Sazón Caribeño"
+             class="w-full h-48 object-cover cursor-pointer"
+             onclick="window.location.href='../restaurantes/sazon-caribeno.html'">
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Sazón Caribeño</h3>
+          <p class="text-gray-600 mt-2">Cocina tradicional con sabores autóctonos.</p>
+          <p class="mt-2">📍 Calle 10 #23-45</p>
+          <p>📞 +57 308 555 6677</p>
+          <a href="../restaurantes/sazon-caribeno.html"
+             class="mt-4 inline-block bg-gradient-to-r from-pink-500 to-yellow-500 text-white px-4 py-2 rounded-lg">
+             Ver Carta
+          </a>
+        </div>
+      </div>
+
+      <!-- Restaurante 3 -->
+      <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition">
+        <img src="../img/restaurante3.jpeg" alt="Mar y Tierra"
+             class="w-full h-48 object-cover cursor-pointer"
+             onclick="window.location.href='../restaurantes/mar-tierra.html'">
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Mar y Tierra</h3>
+          <p class="text-gray-600 mt-2">Parrilla de mariscos y carnes.</p>
+          <p class="mt-2">📍 Avenida Principal</p>
+          <p>📞 +57 309 666 7788</p>
+          <a href="../restaurantes/mar-tierra.html"
+             class="mt-4 inline-block bg-gradient-to-r from-pink-500 to-yellow-500 text-white px-4 py-2 rounded-lg">
+             Ver Carta
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-purple-700 text-white text-center py-6 mt-12">
+    <p>&copy; 2025 TuriArte - Turbo</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="../js/buscador.js"></script>
+  <script>
+    const map = L.map('mapa').setView([8.092, -76.728], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    const restaurantes = [
+      { nombre: "El Pargo Rojo", coords: [8.092, -76.729], desc: "Pescado frito y patacones" },
+      { nombre: "Sazón Caribeño", coords: [8.095, -76.727], desc: "Cocina tradicional" },
+      { nombre: "Mar y Tierra", coords: [8.088, -76.732], desc: "Mariscos y carnes" }
+    ];
+
+    restaurantes.forEach(r => {
+      L.marker(r.coords).addTo(map).bindPopup(`<b>${r.nombre}</b><br>${r.desc}`);
+    });
+  </script>
+</body>
+</html>
